@@ -1,21 +1,32 @@
-import { createContext, useContext, useState } from 'react';
+"use client";
+
+import { createContext, useContext, useState } from "react";
 
 const TimelineContext = createContext();
 
 export function TimelineProvider({ children }) {
-  const [timeline, setTimeline] = useState([]);
+  const [entries, setEntries] = useState([]);
 
-  const addEntry = (entry) => {
-    setTimeline([...timeline, entry]);
+  const addEntry = (friendName, type) => {
+    const newEntry = {
+      id: Date.now(),
+      friendName,
+      type, // "Call", "Text", or "Video"
+      date: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+      title: `${type} with ${friendName}`,
+    };
+    setEntries((prev) => [newEntry, ...prev]);
   };
 
   return (
-    <TimelineContext.Provider value={{ timeline, addEntry }}>
+    <TimelineContext.Provider value={{ entries, addEntry }}>
       {children}
     </TimelineContext.Provider>
   );
 }
 
-export function useTimeline() {
-  return useContext(TimelineContext);
-}
+export const useTimeline = () => useContext(TimelineContext);

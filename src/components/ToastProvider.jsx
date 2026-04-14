@@ -1,25 +1,7 @@
-import { createContext, useContext, useState } from 'react';
+"use client";
 
-const ToastContext = createContext();
+import { Toaster } from "react-hot-toast";
 
-export function ToastProvider({ children }) {
-  const [toasts, setToasts] = useState([]);
-
-  const addToast = (message) => {
-    setToasts([...toasts, { id: Date.now(), message }]);
-  };
-
-  const removeToast = (id) => {
-    setToasts(toasts.filter(toast => toast.id !== id));
-  };
-
-  return (
-    <ToastContext.Provider value={{ toasts, addToast, removeToast }}>
-      {children}
-    </ToastContext.Provider>
-  );
-}
-
-export function useToast() {
-  return useContext(ToastContext);
+export default function ToastProvider() {
+  return <Toaster position="top-right" />;
 }
