@@ -1,1 +1,122 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Anika Rahman",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "anika.rahman@gmail.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["university", "close friend"],
+    "bio": "Met during freshman year. We used to study together every weekend.",
+    "goal": 14,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 2,
+    "name": "Tariq Hossain",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "tariq.hossain@outlook.com",
+    "days_since_contact": 5,
+    "status": "active",
+    "tags": ["work", "colleague"],
+    "bio": "We worked on the same project team for two years. Always reliable and fun to grab lunch with.",
+    "goal": 7,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 3,
+    "name": "Priya Nair",
+    "picture": "https://randomuser.me/api/portraits/women/68.jpg",
+    "email": "priya.nair@yahoo.com",
+    "days_since_contact": 42,
+    "status": "overdue",
+    "tags": ["family", "cousin"],
+    "bio": "My closest cousin. We grew up together but moved to different cities after college.",
+    "goal": 30,
+    "next_due_date": "2026-04-15"
+  },
+  {
+    "id": 4,
+    "name": "James Whitfield",
+    "picture": "https://randomuser.me/api/portraits/men/76.jpg",
+    "email": "james.w@gmail.com",
+    "days_since_contact": 10,
+    "status": "active",
+    "tags": ["university", "mentor"],
+    "bio": "My undergraduate thesis advisor. Stayed in touch over the years and checks in on my career.",
+    "goal": 14,
+    "next_due_date": "2026-04-24"
+  },
+  {
+    "id": 5,
+    "name": "Lena Müller",
+    "picture": "https://randomuser.me/api/portraits/women/12.jpg",
+    "email": "lena.muller@web.de",
+    "days_since_contact": 60,
+    "status": "overdue",
+    "tags": ["travel", "friend"],
+    "bio": "Met during a backpacking trip through Southeast Asia. We kept in touch despite the time zone gap.",
+    "goal": 30,
+    "next_due_date": "2026-04-10"
+  },
+  {
+    "id": 6,
+    "name": "Carlos Mendoza",
+    "picture": "https://randomuser.me/api/portraits/men/55.jpg",
+    "email": "c.mendoza@protonmail.com",
+    "days_since_contact": 3,
+    "status": "active",
+    "tags": ["work", "client"],
+    "bio": "Key client from my freelance days. Still refers people to me and we catch up regularly.",
+    "goal": 7,
+    "next_due_date": "2026-04-17"
+  },
+  {
+    "id": 7,
+    "name": "Fatima Al-Rashid",
+    "picture": "https://randomuser.me/api/portraits/women/91.jpg",
+    "email": "fatima.r@hotmail.com",
+    "days_since_contact": 25,
+    "status": "due_soon",
+    "tags": ["neighbor", "friend"],
+    "bio": "Used to live next door for three years. We had weekly dinners and still stay connected after she moved.",
+    "goal": 21,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 8,
+    "name": "David Kim",
+    "picture": "https://randomuser.me/api/portraits/men/14.jpg",
+    "email": "dkim@gmail.com",
+    "days_since_contact": 90,
+    "status": "overdue",
+    "tags": ["childhood", "close friend"],
+    "bio": "Best friend from middle school. Life got busy but we always pick up right where we left off.",
+    "goal": 60,
+    "next_due_date": "2026-03-20"
+  },
+  {
+    "id": 9,
+    "name": "Sophie Tremblay",
+    "picture": "https://randomuser.me/api/portraits/women/33.jpg",
+    "email": "sophie.t@icloud.com",
+    "days_since_contact": 8,
+    "status": "active",
+    "tags": ["hobby", "book club"],
+    "bio": "We met at a local book club two years ago. She always recommends the most surprising reads.",
+    "goal": 14,
+    "next_due_date": "2026-04-22"
+  },
+  {
+    "id": 10,
+    "name": "Reza Ahmadi",
+    "picture": "https://randomuser.me/api/portraits/men/88.jpg",
+    "email": "reza.ahmadi@gmail.com",
+    "days_since_contact": 19,
+    "status": "due_soon",
+    "tags": ["university", "study group"],
+    "bio": "We were in the same study group during grad school. He's doing research now and we share papers.",
+    "goal": 14,
+    "next_due_date": "2026-04-21"
+  }
+]
