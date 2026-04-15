@@ -24,7 +24,7 @@ export const metadata = {
   title: "KeenKeeper by Shohag",
   description: "Manage and cherish your friendships.",
   icons: {
-    icon: "/favicon.svg",
+    icon: "./favicon.png",
   },
 };
 
