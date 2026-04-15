@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # KeenKeeper
 
 KeenKeeper is a small relationship tracker that helps you keep meaningful connections “on track”. Browse your friends, view details, log quick check-ins (Call/Text/Video), and see interaction analytics.
@@ -40,7 +39,7 @@ KeenKeeper is a friendship management web app that helps you stay connected with
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Live Demo : https://keenkeeper-khaki.vercel.app/
 
 🔗 
 
@@ -101,7 +100,7 @@ src/
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/your-username/keenkeeper.git
+git clone https://github.com/shohag989/keenkeeper-PHA07
 cd keenkeeper
 ```
 
@@ -137,12 +136,11 @@ http://localhost:3000
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- Email: your@email.com
+- GitHub: [shohag989](https://github.com/shohag989)
+- Email: contact.devshohag@gmail.com
 
 ---
 
 ## 📜 License
 
 This project was built as part of the **Programming Hero** Web Development course — Assignment 6.
->>>>>>> 741bfbe2f029c6383a2c1cf68c6996719ae2e333
