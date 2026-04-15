@@ -1,5 +1,8 @@
+"use client";
+
 import TimelineEntry from "@/components/TimelineEntry";
-import timeline from "@/data/timeline.json";
+import { useMemo, useState } from "react";
+import { useTimeline } from "@/context/TimelineContext";
 
 const FILTERS = [
   { value: "all", label: "Filter timeline" },
@@ -14,13 +17,16 @@ function normalizeType(type) {
 }
 
 export default function Page() {
-  // Figma shows only the control; keeping it dynamic without changing visuals:
-  // default "all" maps to placeholder label "Filter timeline".
-  const filter = "all";
+  const { entries } = useTimeline();
+  const [filter, setFilter] = useState("all");
 
-  const items = timeline
-    .map((e) => ({ ...e, type: normalizeType(e.type) }))
-    .filter((e) => (filter === "all" ? true : e.type === filter));
+  const items = useMemo(
+    () =>
+      entries
+        .map((e) => ({ ...e, type: normalizeType(e.type) }))
+        .filter((e) => (filter === "all" ? true : e.type === filter)),
+    [entries, filter],
+  );
 
   return (
     <div className="flex-1 w-full bg-[#F8FAFC]">
@@ -31,10 +37,19 @@ export default function Page() {
               Timeline
             </h1>
 
-            <div className="w-full max-w-[347px] rounded-[8px] bg-white border border-[#E9E9E9] shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] px-4 py-4 flex items-center gap-2">
-              <span className="flex-1 text-[18px] leading-[1.3] font-normal text-[#64748B]">
-                Filter timeline
-              </span>
+            <div className="relative w-full max-w-[347px] rounded-[8px] bg-white border border-[#E9E9E9] shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] px-4 py-4 flex items-center gap-2">
+              <select
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                className="w-full appearance-none bg-transparent text-[18px] leading-[1.3] font-normal text-[#64748B] border-none outline-none pr-8 cursor-pointer"
+                aria-label="Filter timeline"
+              >
+                {FILTERS.map((f) => (
+                  <option key={f.value} value={f.value} disabled={f.value === "all"}>
+                    {f.label}
+                  </option>
+                ))}
+              </select>
               <span
                 aria-hidden="true"
                 className="w-4 h-4 text-[#64748B] inline-flex items-center justify-center"

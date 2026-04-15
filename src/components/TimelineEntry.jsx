@@ -11,15 +11,24 @@ function formatLongDate(isoDate) {
 function getEntryMeta(type) {
   switch (type) {
     case "meetup":
-      return { emoji: "🤝", label: "meetup" };
+      return { iconSrc: "/figma/friend-details/bell.svg", label: "meetup" };
     case "text":
-      return { emoji: "💬", label: "text" };
+      return {
+        iconSrc: "/figma/friend-details/chatdots.svg",
+        label: "text",
+      };
     case "video":
-      return { emoji: "📹", label: "video" };
+      return {
+        iconSrc: "/figma/friend-details/videocamera.svg",
+        label: "video",
+      };
     case "call":
-      return { emoji: "📞", label: "Call" };
+      return {
+        iconSrc: "/figma/friend-details/phonecall.svg",
+        label: "call",
+      };
     default:
-      return { emoji: "💬", label: String(type ?? "text") };
+      return { iconSrc: null, label: String(type ?? "text") };
   }
 }
 
@@ -28,8 +37,12 @@ export default function TimelineEntry({ entry }) {
 
   return (
     <div className="w-full rounded-[8px] bg-white border border-[#E9E9E9] px-4 py-4 flex items-center gap-4">
-      <div className="text-[40px] leading-[1.3] font-medium text-[#244D3F]">
-        {meta.emoji}
+      <div className="w-10 h-10 shrink-0 flex items-center justify-center">
+        {meta.iconSrc ? (
+          <img src={meta.iconSrc} alt="" className="w-8 h-8" aria-hidden="true" />
+        ) : (
+          <div className="w-8 h-8 rounded-full bg-[#F8FAFC] border border-[#E9E9E9]" />
+        )}
       </div>
 
       <div className="flex-1 flex flex-col items-stretch gap-1">

@@ -4,12 +4,12 @@ import Link from "next/link";
 
 function StatusPill({ status }) {
   const map = {
-    active: { label: "On-Track", bg: "#244D3F" },
-    due_soon: { label: "Almost Due", bg: "#EFAD44" },
+    "on-track": { label: "On-Track", bg: "#244D3F" },
+    "almost due": { label: "Almost Due", bg: "#EFAD44" },
     overdue: { label: "Overdue", bg: "#EF4444" },
   };
 
-  const meta = map[status] ?? map.active;
+  const meta = map[status] ?? map["on-track"];
 
   return (
     <span

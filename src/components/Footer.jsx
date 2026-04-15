@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
   faInstagram,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
@@ -39,6 +40,14 @@ export default function Footer() {
               >
                 <span className="sr-only">Instagram</span>
                 <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="p-[10px] rounded-[10px] bg-white/10 hover:bg-white/15 transition-colors"
+                aria-label="X (Twitter)"
+              >
+                <span className="sr-only">X (Twitter)</span>
+                <FontAwesomeIcon icon={faXTwitter} className="w-5 h-5" />
               </a>
             </div>
           </div>

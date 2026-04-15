@@ -1,5 +1,7 @@
+"use client";
+
 import InteractionPieChart from "@/components/InteractionPieChart";
-import timeline from "@/data/timeline.json";
+import { useTimeline } from "@/context/TimelineContext";
 
 function countByType(entries) {
   const counts = { text: 0, call: 0, video: 0 };
@@ -11,7 +13,8 @@ function countByType(entries) {
 }
 
 export default function Page() {
-  const counts = countByType(timeline);
+  const { entries } = useTimeline();
+  const counts = countByType(entries);
 
   const chartData = [
     { key: "text", name: "Text", value: counts.text },
