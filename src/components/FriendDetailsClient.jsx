@@ -71,12 +71,12 @@ export default function FriendDetailsClient({ friend }) {
 
   return (
     <div className="flex-1 w-full bg-[#F8FAFC]">
-      <main className="mx-auto w-full max-w-[1600px] px-5 sm:px-10 lg:px-[245px] py-20">
-        <div className="w-full flex items-start gap-6">
-          {/* Left column (350px): profile + stacked actions */}
-          <section className="w-[350px] flex flex-col items-stretch gap-4">
-            <div className="w-full rounded-[8px] bg-white shadow-[0px_3px_6px_0px_rgba(0,0,0,0.08)] p-6 flex flex-col items-center gap-3">
-              <div className="w-20 h-20 rounded-full overflow-hidden bg-[#D9D9D9]">
+      <main className="mx-auto w-full max-w-[1600px] px-5 sm:px-10 lg:px-20 py-10 lg:py-20">
+        <div className="w-full flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+          {/* Left column: profile + stacked actions */}
+          <section className="w-full lg:w-[350px] flex flex-col items-stretch gap-4">
+            <div className="w-full rounded-[8px] bg-white shadow-[0px_3px_6px_0px_rgba(0,0,0,0.08)] p-6 lg:p-8 flex flex-col items-center gap-4">
+              <div className="w-24 h-24 rounded-full overflow-hidden bg-[#D9D9D9] border-2 border-white shadow-sm">
                 <img
                   src={friend.picture}
                   alt={friend.name}
@@ -85,7 +85,7 @@ export default function FriendDetailsClient({ friend }) {
               </div>
 
               <div className="w-full flex flex-col items-center gap-2">
-                <div className="w-full text-center text-[20px] leading-[1.3] font-semibold text-[#1F2937]">
+                <div className="w-full text-center text-[22px] lg:text-[24px] leading-[1.3] font-semibold text-[#1F2937]">
                   {friend.name}
                 </div>
 
@@ -96,7 +96,7 @@ export default function FriendDetailsClient({ friend }) {
               </div>
 
               <div
-                className="text-center text-[16px] leading-none font-medium text-[#64748B]"
+                className="text-center text-[16px] leading-relaxed font-medium text-[#64748B] italic px-2"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {displayBio}
@@ -107,18 +107,18 @@ export default function FriendDetailsClient({ friend }) {
               </div>
             </div>
 
-            <div className="w-full flex flex-col items-stretch gap-4">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-3 lg:flex lg:flex-col items-stretch gap-3 lg:gap-4">
               <button
                 onClick={() => {
                   const updated = addDaysIso(nextDue, 14);
                   setNextDue(updated);
                   toast.success("Snoozed for 2 weeks");
                 }}
-                className="w-full rounded-[4px] bg-white border border-[#E9E9E9] px-4 py-4 inline-flex items-center justify-center gap-2 text-[#1F2937]"
+                className="w-full rounded-[4px] bg-white border border-[#E9E9E9] px-4 py-4 inline-flex items-center justify-center gap-2 text-[#1F2937] hover:bg-[#F8FAFC] transition-colors shadow-sm"
               >
                 <FontAwesomeIcon icon={faBell} className="w-5 h-5" />
                 <span className="text-[16px] leading-[1.3] font-medium">
-                  Snooze 2 weeks
+                  Snooze
                 </span>
               </button>
 
@@ -127,7 +127,7 @@ export default function FriendDetailsClient({ friend }) {
                   toast.success("Archived");
                   router.push("/");
                 }}
-                className="w-full rounded-[4px] bg-white border border-[#E9E9E9] px-4 py-4 inline-flex items-center justify-center gap-2 text-[#1F2937]"
+                className="w-full rounded-[4px] bg-white border border-[#E9E9E9] px-4 py-4 inline-flex items-center justify-center gap-2 text-[#1F2937] hover:bg-[#F8FAFC] transition-colors shadow-sm"
               >
                 <FontAwesomeIcon icon={faBoxArchive} className="w-5 h-5" />
                 <span className="text-[16px] leading-[1.3] font-medium">
@@ -140,7 +140,7 @@ export default function FriendDetailsClient({ friend }) {
                   toast.success("Deleted");
                   router.push("/");
                 }}
-                className="w-full rounded-[4px] bg-white border border-[#E9E9E9] px-4 py-4 inline-flex items-center justify-center gap-2 text-[#EF4444]"
+                className="w-full rounded-[4px] bg-white border border-[#E9E9E9] px-4 py-4 inline-flex items-center justify-center gap-2 text-[#EF4444] hover:bg-red-50 transition-colors shadow-sm"
               >
                 <FontAwesomeIcon icon={faTrash} className="w-5 h-5" />
                 <span className="text-[16px] leading-[1.3] font-medium">
@@ -150,72 +150,71 @@ export default function FriendDetailsClient({ friend }) {
             </div>
           </section>
 
-          {/* Right column (736px) */}
-          <section className="w-[736px] flex flex-col items-stretch gap-6">
-
+          {/* Right column */}
+          <section className="w-full lg:flex-1 flex flex-col items-stretch gap-8">
             {/* Metric cards row */}
-            <div className="w-full flex items-stretch gap-6">
-              <div className="flex-1 rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] px-4 py-8 flex flex-col items-center gap-2">
-                <div className="text-[30px] leading-[1.3] font-semibold text-[#244D3F]">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-3 items-stretch gap-4 lg:gap-6">
+              <div className="rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] px-4 py-8 flex flex-col items-center gap-2">
+                <div className="text-[30px] lg:text-[36px] leading-[1.3] font-bold text-[#244D3F]">
                   {friend.days_since_contact}
                 </div>
-                <div className="w-full text-center text-[18px] leading-[1.3] font-normal text-[#64748B]">
+                <div className="w-full text-center text-[16px] lg:text-[18px] leading-[1.3] font-normal text-[#64748B]">
                   Days Since Contact
                 </div>
               </div>
 
-              <div className="flex-1 rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] px-4 py-8 flex flex-col items-center gap-2">
-                <div className="text-[30px] leading-[1.3] font-semibold text-[#244D3F]">
+              <div className="rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] px-4 py-8 flex flex-col items-center gap-2">
+                <div className="text-[30px] lg:text-[36px] leading-[1.3] font-bold text-[#244D3F]">
                   {friend.goal}
                 </div>
-                <div className="w-full text-center text-[18px] leading-[1.3] font-normal text-[#64748B]">
+                <div className="w-full text-center text-[16px] lg:text-[18px] leading-[1.3] font-normal text-[#64748B]">
                   Goal (Days)
                 </div>
               </div>
 
-              <div className="flex-1 rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] px-4 py-8 flex flex-col items-center gap-2">
-                <div className="w-full text-center text-[30px] leading-[1.3] font-semibold text-[#244D3F]">
+              <div className="rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] px-4 py-8 flex flex-col items-center gap-2">
+                <div className="w-full text-center text-[24px] lg:text-[30px] leading-[1.3] font-bold text-[#244D3F]">
                   {formatShortDate(nextDue)}
                 </div>
-                <div className="w-full text-center text-[18px] leading-[1.3] font-normal text-[#64748B]">
+                <div className="w-full text-center text-[16px] lg:text-[18px] leading-[1.3] font-normal text-[#64748B]">
                   Next Due
                 </div>
               </div>
             </div>
 
             {/* Relationship goal */}
-            <div className="w-full rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] p-6 flex flex-col items-stretch gap-4">
+            <div className="w-full rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] p-6 lg:p-8 flex flex-col items-stretch gap-4">
               <div className="w-full flex items-center justify-between gap-4">
-                <div className="text-[20px] leading-[1.3] font-medium text-[#244D3F]">
+                <div className="text-[20px] lg:text-[22px] leading-[1.3] font-medium text-[#244D3F]">
                   Relationship Goal
                 </div>
-                <button className="w-[60px] rounded-[4px] bg-[#F8FAFC] border border-[#E9E9E9] p-2 inline-flex items-center justify-center">
+                <button className="rounded-[4px] bg-[#F8FAFC] border border-[#E9E9E9] px-4 py-2 inline-flex items-center justify-center hover:bg-[#E9E9E9] transition-colors">
                   <span className="text-[14px] leading-[1.3] font-medium text-[#1F2937]">
                     Edit
                   </span>
                 </button>
               </div>
-              <div className="text-[18px] leading-[1.3] font-normal text-[#64748B]">
+              <div className="text-[16px] lg:text-[18px] leading-[1.3] font-normal text-[#64748B]">
                 Connect every {friend.goal} days
               </div>
             </div>
 
             {/* Quick Check-In */}
-            <div className="w-full rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] p-6 flex flex-col items-stretch gap-4">
-              <div className="text-[20px] leading-[1.3] font-medium text-[#244D3F]">
+            <div className="w-full rounded-[8px] bg-white shadow-[0px_1px_6px_0px_rgba(0,0,0,0.08)] p-6 lg:p-8 flex flex-col items-stretch gap-4">
+              <div className="text-[20px] lg:text-[22px] leading-[1.3] font-medium text-[#244D3F]">
                 Quick Check-In
               </div>
 
-              <div className="w-full flex items-stretch gap-4">
+              <div className="w-full grid grid-cols-1 sm:grid-cols-3 items-stretch gap-4">
                 <button
                   onClick={() => {
                     addEntry(friend.name, "call");
                     toast.success("Added to timeline");
                   }}
-                  className="flex-1 rounded-[8px] bg-[#F8FAFC] border border-[#E9E9E9] p-4 flex flex-col items-center gap-2"
+                  className="rounded-[8px] bg-[#F8FAFC] border border-[#E9E9E9] p-6 flex flex-col items-center gap-3 hover:bg-[#244D3F] hover:text-white group transition-all"
                 >
-                  <FontAwesomeIcon icon={faPhoneVolume} className="w-8 h-8" />
-                  <span className="text-[18px] leading-[1.3] font-normal text-[#1F2937]">
+                  <FontAwesomeIcon icon={faPhoneVolume} className="w-8 h-8 text-black group-hover:text-white transition-colors" />
+                  <span className="text-[18px] leading-[1.3] font-medium">
                     Call
                   </span>
                 </button>
@@ -224,10 +223,10 @@ export default function FriendDetailsClient({ friend }) {
                     addEntry(friend.name, "text");
                     toast.success("Added to timeline");
                   }}
-                  className="flex-1 rounded-[8px] bg-[#F8FAFC] border border-[#E9E9E9] p-4 flex flex-col items-center gap-2"
+                  className="rounded-[8px] bg-[#F8FAFC] border border-[#E9E9E9] p-6 flex flex-col items-center gap-3 hover:bg-[#244D3F] hover:text-white group transition-all"
                 >
-                  <FontAwesomeIcon icon={faCommentDots} className="w-8 h-8" />
-                  <span className="text-[18px] leading-[1.3] font-normal text-[#1F2937]">
+                  <FontAwesomeIcon icon={faCommentDots} className="w-8 h-8 text-black group-hover:text-white transition-colors" />
+                  <span className="text-[18px] leading-[1.3] font-medium">
                     Text
                   </span>
                 </button>
@@ -236,10 +235,10 @@ export default function FriendDetailsClient({ friend }) {
                     addEntry(friend.name, "video");
                     toast.success("Added to timeline");
                   }}
-                  className="flex-1 rounded-[8px] bg-[#F8FAFC] border border-[#E9E9E9] p-4 flex flex-col items-center gap-2"
+                  className="rounded-[8px] bg-[#F8FAFC] border border-[#E9E9E9] p-6 flex flex-col items-center gap-3 hover:bg-[#244D3F] hover:text-white group transition-all"
                 >
-                  <FontAwesomeIcon icon={faVideo} className="w-8 h-8" />
-                  <span className="text-[18px] leading-[1.3] font-normal text-[#1F2937]">
+                  <FontAwesomeIcon icon={faVideo} className="w-8 h-8 text-black group-hover:text-white transition-colors" />
+                  <span className="text-[18px] leading-[1.3] font-medium">
                     Video
                   </span>
                 </button>
